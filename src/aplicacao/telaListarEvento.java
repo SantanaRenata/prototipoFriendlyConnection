@@ -11,10 +11,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-/**
- *
- * @author Positivo
- */
 public class telaListarEvento extends javax.swing.JFrame {
 
     EventoDAO eventoDAO = DAOFactory.criarEventoDAO();
