@@ -14,10 +14,7 @@ import modelo.Pessoa;
 import dao.DAOFactory;
 import dao.PessoaDAO;
 import dao.PessoaDAOJDBC;
-/**
- *
- * @author Positivo
- */
+
 public class telaCadastro extends javax.swing.JFrame {
     Pessoa pessoa;
     PessoaDAO pessoaDAO = DAOFactory.criarPessoaDAO();

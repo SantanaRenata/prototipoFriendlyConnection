@@ -16,8 +16,6 @@ import java.time.LocalTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.time.format.DateTimeFormatter;
-import java.util.HashSet;
-import java.util.Set;
 
 public class telaEvento extends javax.swing.JFrame {
 EventoDAO eventoDAO = DAOFactory.criarEventoDAO();
