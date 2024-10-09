@@ -16,7 +16,11 @@ public class DAOGenerico {
         String SENHA = "Lord12dt,";
         String URL_BANCO = "jdbc:mysql://localhost:3306/FriendlyConnection";
         //Faz com que a classe seja carregada pela JVM
+<<<<<<< HEAD
         Class.forName("com.mysql.cj.jdbc.Driver");
+=======
+       // Class.forName("com.mysql.cj.jdbc.Driver");
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
 
         return DriverManager.getConnection(URL_BANCO, USUARIO, SENHA);
     }

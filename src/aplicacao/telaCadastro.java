@@ -14,10 +14,14 @@ import modelo.Pessoa;
 import dao.DAOFactory;
 import dao.PessoaDAO;
 import dao.PessoaDAOJDBC;
+<<<<<<< HEAD
 /**
  *
  * @author Positivo
  */
+=======
+
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
 public class telaCadastro extends javax.swing.JFrame {
     Pessoa pessoa;
     PessoaDAO pessoaDAO = DAOFactory.criarPessoaDAO();
@@ -25,9 +29,25 @@ public class telaCadastro extends javax.swing.JFrame {
     /**
      * Creates new form telaCadastro
      */
+<<<<<<< HEAD
     public telaCadastro() {
         initComponents();
      redimensionarImgs();
+=======
+    public telaCadastro(Pessoa pessoa) {
+        initComponents();
+     redimensionarImgs();
+     setLocationRelativeTo(null);  
+
+     this.pessoa = pessoa;
+     if(this.pessoa != null) {
+         btnCadastrarPessoa.setText("Editar");
+         btnListar.setVisible(false);
+         txtNome.setText(this.pessoa.getNome());
+         txtTelefone.setText(this.pessoa.getTelefone());
+         
+     }
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
     }
     public void redimensionarImgs(){
          ImageIcon icon = new ImageIcon("src/imgLogo/imgLogin.png");
@@ -37,6 +57,15 @@ public class telaCadastro extends javax.swing.JFrame {
         img.setIcon(icon);
         
     }
+<<<<<<< HEAD
+=======
+    
+    public telaCadastro() {
+        initComponents();
+     redimensionarImgs();
+     setLocationRelativeTo(null); 
+    }
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -180,8 +209,13 @@ public class telaCadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void inserir() {
+<<<<<<< HEAD
         Pessoa pessoaInserida = new Pessoa();
        
+=======
+     
+    Pessoa pessoaInserida = new Pessoa();
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
     String nome = txtNome.getText().trim();
     if (nome.length() < 3) {
         JOptionPane.showMessageDialog(this, "Erro: O nome deve conter pelo menos 3 letras.", "Erro de Entrada", JOptionPane.ERROR_MESSAGE);
@@ -208,13 +242,44 @@ public class telaCadastro extends javax.swing.JFrame {
         }
         
     }
+<<<<<<< HEAD
+=======
+    
+    private void editar() {
+        Pessoa pessoaEditada = new Pessoa();
+        pessoaEditada.setId(pessoa.getId());
+        pessoaEditada.setNome(txtNome.getText());
+        pessoaEditada.setTelefone(txtTelefone.getText());
+        
+        int linha = pessoaDAO.editar(pessoaEditada);
+        if (linha > 0) {
+            JOptionPane.showMessageDialog(this, "Pessoa editada com sucesso!");
+            new exibirParticipantes().setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro ao editar Pessoa.");
+        }
+    }
+    
+    
+   
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
       this.dispose();
         new telaPrincipal1().setVisible(true);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnCadastrarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarPessoaActionPerformed
+<<<<<<< HEAD
         inserir();       
+=======
+        if(pessoa != null) {
+            editar();
+            this.dispose();
+        }else {
+            inserir();
+        } 
+        
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
     }//GEN-LAST:event_btnCadastrarPessoaActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
@@ -225,6 +290,7 @@ public class telaCadastro extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+<<<<<<< HEAD
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -256,6 +322,9 @@ public class telaCadastro extends javax.swing.JFrame {
             }
         });
     }
+=======
+    
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrarPessoa;

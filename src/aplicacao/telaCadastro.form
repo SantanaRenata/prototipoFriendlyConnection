@@ -39,6 +39,12 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
+<<<<<<< HEAD
+=======
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="telaCadastro_jPanel2"/>
+      </AuxValues>
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
 
       <Layout>
         <DimensionLayout dim="0">

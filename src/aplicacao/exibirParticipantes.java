@@ -25,6 +25,10 @@ public class exibirParticipantes extends javax.swing.JFrame {
     public exibirParticipantes() {
         initComponents();
         modeloPessoa = (DefaultTableModel) tblPessoa.getModel();
+<<<<<<< HEAD
+=======
+        setLocationRelativeTo(null);
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
     }
     
     
@@ -83,9 +87,15 @@ public class exibirParticipantes extends javax.swing.JFrame {
     
     private void editarPessoa() {
         try {
+<<<<<<< HEAD
             Integer id = (Integer) modeloPessoa.getValueAt(tblPessoa.getSelectedRow(), 0);
             String nome = (String) modeloPessoa.getValueAt(tblPessoa.getSelectedRow(), 1);
             String telefone = (String) modeloPessoa.getValueAt(tblPessoa.getSelectedRow(), 1);
+=======
+            int id = (int) modeloPessoa.getValueAt(tblPessoa.getSelectedRow(), 0);
+            String nome = (String) modeloPessoa.getValueAt(tblPessoa.getSelectedRow(), 1);
+            String telefone = (String) modeloPessoa.getValueAt(tblPessoa.getSelectedRow(), 2);
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
             
             
 
@@ -96,13 +106,23 @@ public class exibirParticipantes extends javax.swing.JFrame {
             
             
             
+<<<<<<< HEAD
             //new frmLutador(lutador).setVisible(true);
+=======
+            new telaCadastro(pessoa).setVisible(true);
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
 
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Por favor, selecionar uma pessoa da tabela");
         }
     }
+<<<<<<< HEAD
+=======
+    
+    
+    
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
 
     
     
@@ -210,7 +230,12 @@ public class exibirParticipantes extends javax.swing.JFrame {
 
     private void bntEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntEditarActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         
+=======
+        editarPessoa();
+        this.dispose();
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
     }//GEN-LAST:event_bntEditarActionPerformed
 
     private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed

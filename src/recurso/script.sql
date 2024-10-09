@@ -6,7 +6,10 @@ CREATE TABLE endereco (
     cep VARCHAR(20) NOT NULL,
     bairro VARCHAR(50) NOT NULL,
     rua VARCHAR(100) NOT NULL,
+<<<<<<< HEAD
     numero VARCHAR(10) NOT NULL,
+=======
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
     referencia VARCHAR(100)
 );
 
@@ -25,3 +28,8 @@ CREATE TABLE evento (
     endereco_id INT,
     FOREIGN KEY (endereco_id) REFERENCES endereco(endereco_id)
 );
+<<<<<<< HEAD
+=======
+
+SELECT FROM *ENDERECO;
+>>>>>>> 18ea4291f1d657db1580a266c3823cf2bd7b18b7
