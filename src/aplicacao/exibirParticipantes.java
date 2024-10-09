@@ -25,6 +25,7 @@ public class exibirParticipantes extends javax.swing.JFrame {
     public exibirParticipantes() {
         initComponents();
         modeloPessoa = (DefaultTableModel) tblPessoa.getModel();
+        setLocationRelativeTo(null);
     }
     
     
@@ -83,9 +84,9 @@ public class exibirParticipantes extends javax.swing.JFrame {
     
     private void editarPessoa() {
         try {
-            Integer id = (Integer) modeloPessoa.getValueAt(tblPessoa.getSelectedRow(), 0);
+            int id = (int) modeloPessoa.getValueAt(tblPessoa.getSelectedRow(), 0);
             String nome = (String) modeloPessoa.getValueAt(tblPessoa.getSelectedRow(), 1);
-            String telefone = (String) modeloPessoa.getValueAt(tblPessoa.getSelectedRow(), 1);
+            String telefone = (String) modeloPessoa.getValueAt(tblPessoa.getSelectedRow(), 2);
             
             
 
@@ -96,13 +97,16 @@ public class exibirParticipantes extends javax.swing.JFrame {
             
             
             
-            //new frmLutador(lutador).setVisible(true);
+            new telaCadastro(pessoa).setVisible(true);
 
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Por favor, selecionar uma pessoa da tabela");
         }
     }
+    
+    
+    
 
     
     
@@ -210,7 +214,8 @@ public class exibirParticipantes extends javax.swing.JFrame {
 
     private void bntEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntEditarActionPerformed
         // TODO add your handling code here:
-        
+        editarPessoa();
+        this.dispose();
     }//GEN-LAST:event_bntEditarActionPerformed
 
     private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed

@@ -22,6 +22,7 @@ public class telaPrincipal1 extends javax.swing.JFrame {
     
     public telaPrincipal1() {
         initComponents();
+        setLocationRelativeTo(null);
       
     }
 

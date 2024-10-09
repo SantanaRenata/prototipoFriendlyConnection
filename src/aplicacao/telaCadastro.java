@@ -22,9 +22,19 @@ public class telaCadastro extends javax.swing.JFrame {
     /**
      * Creates new form telaCadastro
      */
-    public telaCadastro() {
+    public telaCadastro(Pessoa pessoa) {
         initComponents();
      redimensionarImgs();
+     setLocationRelativeTo(null);  
+
+     this.pessoa = pessoa;
+     if(this.pessoa != null) {
+         btnCadastrarPessoa.setText("Editar");
+         btnListar.setVisible(false);
+         txtNome.setText(this.pessoa.getNome());
+         txtTelefone.setText(this.pessoa.getTelefone());
+         
+     }
     }
     public void redimensionarImgs(){
          ImageIcon icon = new ImageIcon("src/imgLogo/imgLogin.png");
@@ -33,6 +43,12 @@ public class telaCadastro extends javax.swing.JFrame {
         icon.setImage(icon.getImage().getScaledInstance(img.getWidth(), img.getHeight(),1));
         img.setIcon(icon);
         
+    }
+    
+    public telaCadastro() {
+        initComponents();
+     redimensionarImgs();
+     setLocationRelativeTo(null); 
     }
 
     /**
@@ -205,13 +221,37 @@ public class telaCadastro extends javax.swing.JFrame {
         }
         
     }
+    
+    private void editar() {
+        Pessoa pessoaEditada = new Pessoa();
+        pessoaEditada.setId(pessoa.getId());
+        pessoaEditada.setNome(txtNome.getText());
+        pessoaEditada.setTelefone(txtTelefone.getText());
+        
+        int linha = pessoaDAO.editar(pessoaEditada);
+        if (linha > 0) {
+            JOptionPane.showMessageDialog(this, "Pessoa editada com sucesso!");
+            new exibirParticipantes().setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro ao editar Pessoa.");
+        }
+    }
+    
+    
+   
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
       this.dispose();
         new telaPrincipal1().setVisible(true);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnCadastrarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarPessoaActionPerformed
-        inserir();       
+        if(pessoa != null) {
+            editar();
+            this.dispose();
+        }else {
+            inserir();
+        } 
+        
     }//GEN-LAST:event_btnCadastrarPessoaActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
@@ -222,37 +262,7 @@ public class telaCadastro extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(telaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(telaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(telaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(telaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new telaCadastro().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrarPessoa;
