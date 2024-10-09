@@ -24,3 +24,5 @@ CREATE TABLE evento (
     endereco_id INT,
     FOREIGN KEY (endereco_id) REFERENCES endereco(endereco_id)
 );
+
+SELECT FROM *ENDERECO;

@@ -13,7 +13,7 @@ import java.sql.*;
 public class DAOGenerico {
     public static Connection getConexao() throws SQLException, ClassNotFoundException {
         String USUARIO = "root";
-        String SENHA = "123456";
+        String SENHA = "Lord12dt,";
         String URL_BANCO = "jdbc:mysql://localhost:3306/FriendlyConnection";
         //Faz com que a classe seja carregada pela JVM
        // Class.forName("com.mysql.cj.jdbc.Driver");
